@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Search, DataView, Map } from "./components";
 import { GeoLocation } from "./api";
 import { isIP, isFQDN } from "validator";
-import { URLSearchParams } from "./utils";
+//import { URLSearchParams } from "./utils";
 function geoSearch(search?: string) {
   if (search) {
     if (isIP(search)) return GeoLocation.get({ ipAddress: search });
@@ -33,7 +33,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    search(URLSearchParams(window.location.search).search || "");
+    //search(URLSearchParams(window.location.search).search || "");
+    search();
   }, []);
 
   return (
